@@ -1,0 +1,16 @@
+## Tuist (artefatos gerados — fonte da verdade é o Project.swift)
+*.xcodeproj
+*.xcworkspace
+.build/
+Tuist/.build/
+Derived/
+*.xcframework
+graph.png
+
+## macOS
+.DS_Store
+
+## Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/

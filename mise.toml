@@ -1,0 +1,36 @@
+[tools]
+tuist = "4.155.4"
+
+# Rode "mise run <task>" (ou os aliases) para os comandos certos do Tuist.
+
+[tasks.install]
+description = "Resolve as dependências SPM (Alamofire) declaradas em Tuist/Package.swift"
+run = "tuist install"
+
+[tasks.generate]
+description = "Gera o .xcodeproj/.xcworkspace a partir do Project.swift (sem abrir)"
+depends = ["install"]
+run = "tuist generate --no-open"
+
+[tasks.open]
+description = "Gera o projeto e abre no Xcode"
+depends = ["install"]
+run = "tuist generate"
+
+[tasks.edit]
+description = "Abre os manifests do Tuist (Project.swift etc.) em um projeto editável"
+run = "tuist edit"
+
+[tasks.build]
+description = "Compila o app via Tuist (iOS)"
+depends = ["install"]
+run = "tuist build EstacioneAqui --platform ios"
+
+[tasks.test]
+description = "Roda os testes via Tuist (iOS)"
+depends = ["install"]
+run = "tuist test EstacioneAqui --platform ios"
+
+[tasks.clean]
+description = "Limpa artefatos gerados e caches do Tuist"
+run = "tuist clean"
